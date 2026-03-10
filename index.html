@@ -3,24 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yousr</title>
+    <title>Yousr Allah Allouani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: '#FAF6F1',
+              blue: '#4A7FB5',
+              'blue-light': '#AACDDC',
+              taupe: '#D2C4B4',
+              ink: '#2c2c2c',
+              'ink-muted': '#8a8380',
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+              arabic: ['"Scheherazade New"', 'serif'],
+            },
+          },
+        },
+      }
+    </script>
     <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Georgia, serif;
-            background: #fff;
-            color: #000;
-        }
-        p {
-            font-size: 1.25rem;
-        }
+      ::selection { background: #AACDDC; color: #2c2c2c; }
+      body { -webkit-font-smoothing: antialiased; }
+      .vertical-content { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease; opacity: 0; }
+      .vertical-content.open { opacity: 1; }
+      .fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+      .chevron { display: inline-block; transition: transform 0.25s ease; }
+      .chevron.rotated { transform: rotate(90deg); }
     </style>
 </head>
-<body>
-    <p>soon<br>&ndash;yousr</p>
+<body class="bg-cream text-ink font-sans antialiased min-h-screen text-base leading-relaxed">
+
+    <!-- Header -->
+    <header class="px-6 md:px-10 lg:pl-[12vw] pt-12 md:pt-16 pb-6 border-b border-taupe/30">
+        <div class="flex items-baseline gap-2 mb-4">
+            <span class="text-3xl md:text-4xl font-light tracking-tight">Yousr</span>
+            <span class="font-arabic text-4xl md:text-5xl font-bold leading-none relative top-[0.08em]">الله</span>
+            <span class="text-3xl md:text-4xl font-light tracking-tight">Allouani</span>
+        </div>
+        <nav class="flex items-center gap-5 text-sm tracking-wide">
+            <a href="#writings" class="text-ink-muted underline underline-offset-4 decoration-taupe hover:text-ink hover:decoration-ink transition-colors">Writings</a>
+            <a href="#posts" class="text-ink-muted underline underline-offset-4 decoration-taupe hover:text-ink hover:decoration-ink transition-colors">Posts</a>
+            <a href="#gallery" class="text-ink-muted underline underline-offset-4 decoration-taupe hover:text-ink hover:decoration-ink transition-colors">Gallery</a>
+            <span class="text-taupe">|</span>
+            <a href="https://x.com/YousrAllouani" target="_blank" rel="noopener" class="text-ink-muted underline underline-offset-4 decoration-taupe hover:text-ink hover:decoration-ink transition-colors">Twitter/X</a>
+            <a href="https://linkedin.com/in/yousr-allouani" target="_blank" rel="noopener" class="text-ink-muted underline underline-offset-4 decoration-taupe hover:text-ink hover:decoration-ink transition-colors">LinkedIn</a>
+            <a href="https://github.com/Yousr-Allah-Allouani" target="_blank" rel="noopener" class="text-ink-muted underline underline-offset-4 decoration-taupe hover:text-ink hover:decoration-ink transition-colors">GitHub</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-10 md:pt-14 pb-6 px-6 md:px-10 lg:pl-[12vw] max-w-3xl">
+        <p class="fade-in text-xl md:text-2xl font-light text-ink/70">
+            I care about three things.
+        </p>
+    </section>
+
+    <!-- Three verticals -->
+    <main class="px-6 md:px-10 lg:pl-[12vw] max-w-3xl space-y-4 pb-16">
+
+        <!-- Vertical 1: The Human and The Machine -->
+        <section class="fade-in">
+            <button onclick="toggleVertical(this)" class="group flex items-center gap-4 text-left w-full cursor-pointer py-3">
+                <span class="chevron text-blue text-3xl select-none leading-none font-light">&#x203A;</span>
+                <h2 class="text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-blue transition-colors duration-200">The Human and The Machine</h2>
+            </button>
+            <div class="vertical-content">
+                <div class="pt-4 pl-11 border-l-2 border-blue/25 ml-3 space-y-5 text-[0.95rem] leading-[1.85]">
+                    <p class="text-ink-muted italic">We build machines. We shape them, obsess over them, refine every pixel and interaction. And we ask: <span class="not-italic text-ink/70">is this the best way?</span></p>
+                    <hr class="border-taupe/20">
+
+                    <h3 class="text-lg font-semibold pt-2">The Promise of AI is No UI</h3>
+                    <p>What if instead of tapping through menus, date pickers, and edit screens, you just typed what you wanted and it happened?</p>
+                    <p>That&rsquo;s what I built. You open a text field, you type what you want: &ldquo;move this to next weekend,&rdquo; &ldquo;rename to grocery run,&rdquo; &ldquo;pin this.&rdquo; The app interprets it and applies the change instantly.</p>
+                    <p>No date pickers (which I viscerally hate!), no edit screens, no menus. Just pure natural language.</p>
+                    <p class="text-lg font-medium italic text-blue py-1">&ldquo;One command &gt; three taps.&rdquo;</p>
+                    <p>Typing what you want counts as one decision because you already know the outcome. Tapping through buttons means scanning the screen, interpreting context, navigating layers of UI, and making decisions at each step.</p>
+                    <p>Chat beats buttons because it&rsquo;s fewer decisions AND fewer taps. It&rsquo;s a lesser cognitive load overall&mdash;and eventually faster.</p>
+
+                    <h4 class="font-semibold mt-6 mb-2">On the Long Tail of UIs</h4>
+                    <p>The thing I&rsquo;m most excited about is what I call &ldquo;long-tail actions.&rdquo;</p>
+                    <p>Think about it: &ldquo;pin all tasks that have a reminder.&rdquo; In a traditional app, that means: open a filter, select &ldquo;has reminder,&rdquo; select all results, find the pin action, confirm. That&rsquo;s a lot of UI surface for something incredibly specific&mdash;so specific that no UX designer would ever build dedicated buttons for it.</p>
+                    <p>So the feature simply&hellip; doesn&rsquo;t exist, even though it&rsquo;d be convenient if implemented properly.</p>
+                    <p>With natural language though, it&rsquo;s just one text box.</p>
+                    <p>What excites me about &ldquo;Language-Augmented UIs&rdquo; is that language unlocks interactions that buttons could never justify. Every niche, oddly specific action that was too costly to design a screen for becomes possible&mdash;since language doesn&rsquo;t bloat the UI. It&rsquo;s just a text field. So the long tail of any interface becomes accessible.</p>
+                    <p>The &ldquo;long tail&rdquo; is a concept from statistics and economics. There&rsquo;s a small number of things that are hugely popular (the &ldquo;head&rdquo;)&mdash;and a massive number of things that are each individually rare but collectively significant (the &ldquo;tail&rdquo;).</p>
+                    <p>In task management apps: everyone creates tasks, checks them off, sets due dates. Those are the &ldquo;head.&rdquo; Every app builds buttons for them. But then there&rsquo;s an enormous number of very specific actions users might want. Each is too rare to justify designing UI for. But collectively, they represent a huge amount of what people actually wish they could do.</p>
+                    <p>That&rsquo;s the long tail. And natural language makes the entire tail accessible&mdash;because you don&rsquo;t need to pre-design UI for each action. You just need the user to be able to describe it.</p>
+                    <p class="text-ink-muted border-l-2 border-taupe/40 pl-4 text-sm">To be clear: I don&rsquo;t mean this to replace traditional UI. In my app, you can still drag and drop, tap, use normal controls. Everything works the way you&rsquo;d expect. But on top of that, there&rsquo;s a natural language layer that can do most of it faster&mdash;and eventually, by voice.</p>
+                    <p>The app is on the <a href="https://apps.apple.com/us/app/cift/id6749275564" target="_blank" rel="noopener" class="text-blue underline underline-offset-2 hover:text-ink transition-colors">App Store</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vertical 2: The Tool and The World -->
+        <section class="fade-in">
+            <button onclick="toggleVertical(this)" class="group flex items-center gap-4 text-left w-full cursor-pointer py-3">
+                <span class="chevron text-blue text-3xl select-none leading-none font-light">&#x203A;</span>
+                <h2 class="text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-blue transition-colors duration-200">The Tool and The World</h2>
+            </button>
+            <div class="vertical-content">
+                <div class="pt-4 pl-11 border-l-2 border-blue/25 ml-3 space-y-5 text-[0.95rem] leading-[1.85]">
+                    <p class="text-ink-muted italic">When a machine works, it disappears. It becomes a tool. And tools reshape the world&mdash;and us with it.</p>
+                    <hr class="border-taupe/20">
+
+                    <!-- Essay 1 -->
+                    <h3 class="text-lg font-semibold pt-2">Is AI Making Us Uncool?</h3>
+                    <p class="text-ink-muted text-sm">Published at <a href="https://native.works/is-ai-making-us-uncool" target="_blank" rel="noopener" class="text-blue underline underline-offset-2 hover:text-ink transition-colors">native.works</a></p>
+                    <p>We ought to stay critical and direct our efforts in building an actually desirable world with tech&mdash;and not just follow the next big enthusiastic shiny news.</p>
+                    <p><a href="https://native.works/is-ai-making-us-uncool" target="_blank" rel="noopener" class="text-blue underline underline-offset-2 hover:text-ink transition-colors">Read the full essay &rarr;</a></p>
+
+                    <hr class="border-taupe/20 my-2">
+
+                    <!-- Essay 2 -->
+                    <h3 class="text-lg font-semibold pt-2">It&rsquo;s Rude to Share AI Output with People</h3>
+
+                    <p>In a past essay, I observed: &ldquo;On social media, AI is seen as sloppy, almost unholy, unglamorous, a tool that sucks the joy and soul out of everything it touches. Someone called it &lsquo;Temu for thinking,&rsquo; as if to say: AI is cheap. AI is the shortcut that marks you as someone who couldn&rsquo;t be bothered to do the thing properly. Using ChatGPT signals a lack of agency and responsibility. Not commissioning an artist and AI-generating an image instead is, at best, tolerable if you&rsquo;re a small creator with no budget, but a potential scandal if you&rsquo;re a brand or a major influencer with resources and a reputation to protect.</p>
+
+                    <p>You can use AI in private, perhaps, but you don&rsquo;t admit to it in public, and you certainly don&rsquo;t present its output as your own without expecting some measure of contempt.&rdquo;</p>
+
+                    <p>One of Alex Martsinovich&rsquo;s blog posts is titled &ldquo;It&rsquo;s rude to show AI output to people.&rdquo; He then proceeds to coin &ldquo;AI-Etiquette,&rdquo; which I find to be a brilliant concept. Historically, all disruptive technologies were accompanied by their own &ldquo;etiquettes&rdquo; that oversee how they blend with a culture&mdash;and safeguard it from the alienating effects of the new invention.</p>
+
+                    <p>&ldquo;Smartphone etiquette&rdquo; was not to consult notifications when sitting in a caf&eacute; with a friend. Watch etiquette was not to check the time repetitively when chatting with someone. Headphones etiquette was not to wear them in formal settings.</p>
+
+                    <p class="font-medium">AI etiquette is&hellip; many things.</p>
+
+                    <p>What AI etiquette entails is more subtle than pure abstention from sharing its output, or simple disclosure of having used it. Rather, it is a matter of &ldquo;pre-processing&rdquo; of its production.</p>
+
+                    <p>You simply ought to digest the LLM response first, then share it. AI Etiquette is somehow reminiscent of royal food etiquette: you taste the plate before handing it to the noble, to confirm no food is poisonous.</p>
+
+                    <p>To the question &ldquo;Should I disclose Claude wrote this entire MVP before sending it to my boss?&rdquo;&mdash;a part of you wants to dissipate the wrong assumption that you did it yourself. Another part doesn&rsquo;t want your work, of which you take full ownership, to be worth less because the receiving part has an &ldquo;AI is lazy and bad&rdquo; heuristic. The &ldquo;slop&rdquo; stigma around AI, and the risk of appearing lazy, deceitful, may be the first cultural safeguards we came up with. The extent to which these are useful, in my view, is too marginal for them to survive.</p>
+
+                    <p>The turbulence that occurs after a notable technological disruption naturally arouses our cultural safeguard instinct more than what is strictly necessary. Given how AI is vehemently forcing itself onto our cultures, we will reach an equilibrium that will solve this awkwardness soon. It appears safe to say that we will default to assuming AI was used, but demand that the &ldquo;AI operator&rdquo; be wary of the AI achievement&rsquo;s intricacies. The level of depth the AI operator will be expected to know about those intricacies is what remains undetermined, and at the discretion of the parties involved. It will be informally resolved through etiquette.</p>
+
+                    <p class="text-ink-muted italic text-sm">As I&rsquo;m writing this, a fickle voice is whispering in my ears that &ldquo;No form of oversight will be needed in the near future. &lsquo;Taking ownership&rsquo; of an AI&rsquo;s output will be a non-thing, as fully autonomous agents will barely have more than a single human in the loop.&rdquo; This may or may not become true.</p>
+
+                    <p>Anyhow, AI has a weird cultural fit. Which brings me to a concept I&rsquo;d like to coin: <strong>Product-Culture Fit (PCF)</strong>. A measure of how well a product&mdash;not the branding around it, the product itself&mdash;resonates with (1) cultural identity, (2) perceived social acceptance, and (3) emotional desirability. I like to compress these three dimensions into a single word: <em>coolness</em>.</p>
+
+                    <p class="text-lg font-medium italic text-blue py-1">The iPod is cool. ChatGPT is not.</p>
+
+                    <p>The iPod is cool because (1) the cultural identity around listening to music preceded it and was already cool, (2) listening to music is broadly accepted, and (3) the emotions it evokes are overwhelmingly positive. Music is pleasure. Of course, labeling a beloved device as cool in retrospect and reverse-engineering reasons for it is trivially easy. But I find the framework useful for a harder exercise: imagining what a cool consumer AI artifact might look like. The more I try, the more unlikely it seems. &ldquo;Cool,&rdquo; in the &ldquo;popular and socially desirable&rdquo; sense, is among the last words AI can claim right now, as covered in &ldquo;Is ChatGPT making us uncool?&rdquo;</p>
+
+                    <p>Douglas Holt&rsquo;s <em>Cultural Branding</em> offers a useful lens to explain why. The theory holds that brands become iconic by embedding themselves in &ldquo;cultural tensions&rdquo;&mdash;moments when people feel one thing and society pushes the opposite, creating a desire for something different. Apple&rsquo;s &ldquo;Think Different&rdquo; responded to the tension between our desire to be unique and society&rsquo;s pull toward conformity.</p>
+
+                    <p>While Holt&rsquo;s framework operates at the brand level, I&rsquo;m pointing at the immutable branding carried by a product&rsquo;s utility itself. No amount of external branding can override it. Thus, Product-Culture Fit is that component of the brand that belongs to the product&rsquo;s function and design, rather than its marketing or engineered identity.</p>
+
+                    <p>In AI&rsquo;s case, the cultural tension is uniquely hard to resolve through branding. The tension is: AI is slop. It looks bad. It threatens what I do. It dilutes culture with junk. It steals from real creatives. Meanwhile, trillions are being poured into it, it&rsquo;s showing up in every job description, and you&rsquo;re expected to be incorporating it into your career plans whether you like it or not.</p>
+
+                    <p>That&rsquo;s the tension the utility of AI itself created. And how do you resolve a tension you created through your product&rsquo;s core function? Certainly not with a tagline. Apple didn&rsquo;t cause society&rsquo;s drift toward uniformity. AI absolutely caused the fear of economic irrelevance&mdash;of drawing, writing, animating, expressing, becoming just another thing machines can produce on demand and for cheap.</p>
+
+                    <p>Anthropic&rsquo;s &ldquo;Keep Thinking&rdquo; is a genuine attempt at cultural appeal. But it&rsquo;s fighting the product&rsquo;s own gravity. The enabling potential of AI is simply too large, too substitutive, for a one-liner to absorb. The branding whispers you&rsquo;re still relevant, whereas the utility screams otherwise.</p>
+
+                    <p class="font-medium">This is why AI is structurally destined to stay uncool&mdash;at least in its current form. Not because of bad PR. Because the product itself carries a message that no campaign can overwrite.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vertical 3: The Mind and The Method -->
+        <section class="fade-in">
+            <button onclick="toggleVertical(this)" class="group flex items-center gap-4 text-left w-full cursor-pointer py-3">
+                <span class="chevron text-blue text-3xl select-none leading-none font-light">&#x203A;</span>
+                <h2 class="text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-blue transition-colors duration-200">The Mind and The Method</h2>
+            </button>
+            <div class="vertical-content">
+                <div class="pt-4 pl-11 border-l-2 border-blue/25 ml-3 space-y-5 text-[0.95rem] leading-[1.85]">
+                    <p class="text-ink-muted italic">A world shaped by tools demands something of us: that we understand how we learn, how we adapt, how we stay in control.</p>
+                    <hr class="border-taupe/20">
+
+                    <p>How do we learn things? Fostering a strong learning culture is probably the single most consequential thing a civilisation can have.</p>
+                    <p>How does it go? How do LLMs change it? Why do some people find it easier than others? Why do some learning cultures succeed more than others?</p>
+
+                    <p class="text-sm text-ink-muted">A candid little thread on this: <a href="https://x.com/YousrAllouani" target="_blank" rel="noopener" class="text-blue underline underline-offset-2 hover:text-ink transition-colors">read it on Twitter/X &rarr;</a></p>
+
+                    <p class="text-ink-muted italic">More writing coming soon.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Gallery -->
+    <section id="gallery" class="mt-10 px-6 md:px-10 lg:pl-[12vw] max-w-4xl pb-12">
+        <h2 class="text-2xl font-semibold mb-8 fade-in">Gallery</h2>
+        <p class="text-ink-muted italic">Photos coming soon.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-6 md:px-10 py-10 border-t border-taupe/20">
+        <p class="text-ink-muted">&ndash;yousr</p>
+    </footer>
+
+    <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '-40px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Expand/collapse verticals
+    function toggleVertical(btn) {
+        const content = btn.nextElementSibling;
+        const chevron = btn.querySelector('.chevron');
+        const isOpen = content.classList.contains('open');
+
+        if (isOpen) {
+            content.style.maxHeight = '0';
+            content.classList.remove('open');
+            chevron.classList.remove('rotated');
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.classList.add('open');
+            chevron.classList.add('rotated');
+        }
+    }
+    </script>
 </body>
 </html>
